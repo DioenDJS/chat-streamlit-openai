@@ -1,10 +1,11 @@
 import streamlit as st
 from openai import OpenAI
-
+import os
 
 st.title("chatGPT Like")
 
-client = OpenAI(api_key=st.secrets['OPENAI_API_KEY'])
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+client = OpenAI(openai_api_key=OPENAI_API_KEY)
 
 if "openai_model" not in st.session_state:
     st.session_state['openai_model'] = "gpt-3.5-turbo"
