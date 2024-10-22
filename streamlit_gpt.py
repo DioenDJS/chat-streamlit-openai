@@ -5,7 +5,7 @@ import os
 st.title("chatGPT Like")
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-client = OpenAI(openai_api_key=OPENAI_API_KEY)
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 if "openai_model" not in st.session_state:
     st.session_state['openai_model'] = "gpt-3.5-turbo"
